@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dhcc.ecm.business.mybatis.file.mapper.TInstanceFileMapper" >
+  <resultMap id="BaseResultMap" type="com.dhcc.ecm.business.mybatis.file.model.TInstanceFile" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="INSTANCE_ID" property="instanceId" jdbcType="VARCHAR" />
+    <result column="TASK_ID" property="taskId" jdbcType="VARCHAR" />
+    <result column="FILE_NAME" property="fileName" jdbcType="VARCHAR" />
+    <result column="FILE_SIZE" property="fileSize" jdbcType="DECIMAL" />
+    <result column="FILE_EXT" property="fileExt" jdbcType="VARCHAR" />
+    <result column="FILE_TYPE" property="fileType" jdbcType="VARCHAR" />
+    <result column="FILE_PATH" property="filePath" jdbcType="VARCHAR" />
+    <result column="VERSION" property="version" jdbcType="DECIMAL" />
+    <result column="STATUS" property="status" jdbcType="CHAR" />
+    <result column="CREATE_USER" property="createUser" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="ORIGINAL_FILE_NAME" property="originalFileName" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <select id="fileListForClass" parameterType="string" resultMap="BaseResultMap">
+  	select tf.* from T_INSTANCE_FILE tf where 1=1 
+  	<if test="instanceId !=null &amp;&amp; instanceId != '' ">
+  		and tf.INSTANCE_ID = #{instanceId}
+  	</if>
+  	order by tf.CREATE_DATE desc
+   </select>
+  
+  
+  <select id="findTInstanceFilePage" parameterType="com.dhcc.ecm.business.mybatis.file.model.TInstanceFile" resultMap="BaseResultMap">
+        select <include refid="dynamic_columns"/>
+        from T_INSTANCE_FILE t               
+      <include refid="dynamic_conditions"/>
+  </select>
+  
+   <sql id="dynamic_columns" >
+        t.ID id,
+        t.INSTANCE_ID instanceId,
+        t.TASK_ID taskId,
+        t.FILE_NAME fileName,
+        t.FILE_SIZE fileSize,
+        t.FILE_EXT fileExt,
+        t.FILE_TYPE fileType,
+        t.FILE_PATH filePath,
+        t.VERSION version,
+        t.STATUS status,
+        t.CREATE_USER createUser,
+        t.CREATE_DATE createDate,
+        t.ORIGINAL_FILE_NAME originalFileName,
+        t.REMARK remark
+	</sql>
+	
+	<sql id="dynamic_conditions" >
+	<where>
+		<if test="null != id"> AND  t.id = #{id} </if>
+		<if test="null != instanceId"> AND  t.instanceId = #{instanceId} </if>
+		<if test="null != createUser"> AND  t.createUser = #{createUser} </if>
+		<if test="null != fileName"> AND  t.fileName = #{fileName} </if>
+	</where>
+  </sql>
+  
+</mapper>

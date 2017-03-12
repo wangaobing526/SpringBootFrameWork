@@ -1,0 +1,3 @@
+com\dhcc\ecm\business\file\impl\TInstanceFileServiceImpl.class
+tk\mybatis\springboot\conf\TransactionService.class
+com\dhcc\ecm\business\file\TInstanceFileService.class

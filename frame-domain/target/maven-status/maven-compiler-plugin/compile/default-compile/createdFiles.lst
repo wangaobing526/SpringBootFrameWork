@@ -1,0 +1,4 @@
+com\dhcc\ecm\business\mybatis\file\model\TInstanceFile.class
+com\dhcc\ecm\business\mybatis\file\mapper\TInstanceFileMapper.class
+tk\mybatis\springboot\model\BaseEntity.class
+tk\mybatis\springboot\util\MyMapper.class

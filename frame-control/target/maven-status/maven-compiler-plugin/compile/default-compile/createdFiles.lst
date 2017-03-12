@@ -1,0 +1,13 @@
+tk\mybatis\springboot\controller\test\TestController.class
+tk\mybatis\springboot\BussnessApplication.class
+tk\mybatis\springboot\conf\MyBatisConfig.class
+tk\mybatis\springboot\websocket\MyWebSocket.class
+tk\mybatis\springboot\conf\WebMvcConfig.class
+tk\mybatis\springboot\controller\file\TInstanceFileController.class
+tk\mybatis\springboot\controller\CommonController.class
+tk\mybatis\springboot\websocket\WebSocketConfig.class
+tk\mybatis\springboot\BussnessApplication$1.class
+tk\mybatis\springboot\RedisObjectSerializer.class
+tk\mybatis\springboot\controller\AbstractRestHandler.class
+com\majesco\poc\config\SwaggerConfig.class
+tk\mybatis\springboot\conf\MyBatisMapperScannerConfig.class

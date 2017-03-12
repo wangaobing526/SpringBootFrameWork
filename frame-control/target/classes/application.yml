@@ -1,0 +1,55 @@
+
+server:
+    port: 8888
+    context-path: #/liuzh/
+
+logging:
+    level:
+        tk.mybatis: DEBUG
+        #查看mybatis语句输出
+        com.dhcc.ecm.business.mybatis: DEBUG
+        org.springframework.security: DEBUG
+
+spring:
+    datasource:       
+       # url: jdbc:oracle:thin:@105.erjinzhi.net:1521:orcl
+       # username: itemmg
+       # password: password     
+        url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+        username: cnnp
+        password: password    
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: oracle.jdbc.OracleDriver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+    mvc:
+        view:
+            prefix: /templates/
+            suffix: .ftl
+    freemarker:
+        cache: false
+        request-context-attribute: request
+    jackson:
+      date-format: com.fasterxml.jackson.databind.util.ISO8601DateFormat
+    data:
+      mongodb:
+        host:127.0.0.1
+        port:27017
+        uri:mongodb://127.0.0.1/runoob
+        repositories
+           enabled:true
+        field-naming-strategy:org.springframework.boot.autoconfigure.data.mongo
+
+              
+
