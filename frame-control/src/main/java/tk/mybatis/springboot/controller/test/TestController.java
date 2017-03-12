@@ -26,7 +26,11 @@ import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import tk.mybatis.springboot.controller.AbstractRestHandler;
-
+/**
+ * redis测试类
+ * @author wangaobing
+ *
+ */
 @RestController
 @RequestMapping(value = "/test")
 @Api(value = "common-test-api", description = "测试接口服务", tags = "测试接口")
