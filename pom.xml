@@ -31,7 +31,8 @@
 		<repository>
 			<id>nexus</id>
 			<name>Nexus</name>
-			<url>http://192.168.0.201:8081/nexus/content/groups/public</url>
+			<!-- <url>http://192.168.0.201:8081/nexus/content/groups/public</url> -->
+			<url>http://127.0.0.1:8081/nexus/content/groups/public</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -44,7 +45,8 @@
 		<pluginRepository>
 			<id>nexus</id>
 			<name>Nexus</name>
-			<url>http://101.erjinzhi.net:8081/nexus/content/groups/public</url>
+			<!-- <url>http://101.erjinzhi.net:8081/nexus/content/groups/public</url> -->
+			<url>http://127.0.0.1:8081/nexus/content/groups/public</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -52,17 +54,24 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
+		<pluginRepository>  
+		    <name>kafka.apache.org</name>  
+		    <id>kafka.apache.org</id>  
+		    <url>http://kafka.apache.org</url>  
+        </pluginRepository>  
 	</pluginRepositories>
 	<distributionManagement>
 		<repository>
 			<id>nexus_releases</id>
 			<name>core Release Repository</name>
-			<url>http://101.erjinzhi.net:8081/nexus/content/repositories/releases/</url>
+			<!-- <url>http://101.erjinzhi.net:8081/nexus/content/repositories/releases/</url> -->
+			<url>http://127.0.0.1:8081/nexus/content/repositories/releases/</url> 
 		</repository>
 		<snapshotRepository>
 			<id>nexus_snapshots</id>
 			<name>core Snapshots Repository</name>
-			<url>http://101.erjinzhi.net:8081/nexus/content/repositories/snapshots/</url>
+			<!--<url>http://101.erjinzhi.net:8081/nexus/content/repositories/snapshots/</url>-->
+			<url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
